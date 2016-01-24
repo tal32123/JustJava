@@ -23,7 +23,11 @@ int quantity = 0;
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        displayPrice(quantity*5);
+        int price = quantity * 5;
+        String priceMessage = "Total: $" + (price);
+        priceMessage = priceMessage + "\nThank you!";
+        displayMessage(priceMessage);
+        //displayPrice(quantity * 5);
     }
 
     /**
@@ -54,8 +58,12 @@ int quantity = 0;
     /**
      * This method displays the given price on the screen.
      */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    //private void displayPrice(int number) {
+    //   TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+    //    priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    //}
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView)findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 }
