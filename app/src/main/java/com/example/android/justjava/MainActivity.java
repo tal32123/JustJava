@@ -12,6 +12,7 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends ActionBarActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,22 @@ public class MainActivity extends ActionBarActivity {
         display(numberOfCoffees);
         displayPrice(numberOfCoffees*5);
     }
+
+    /**
+     *This method increments the quantity
+     */
+    public void increment(View view) {
+        int quantity = 3;
+        display(quantity);
+        displayPrice(quantity * 5);
+    }
+
+    public void decrement(View view) {
+        int quantity = 1;
+        display(quantity);
+        displayPrice(quantity*5);
+    }
+
 
     /**
      * This method displays the given quantity value on the screen.
