@@ -20,16 +20,20 @@ int quantity = 0;
     }
 
     /**
-     * This method is called when the order button is clicked.
+     * Displays order summary when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int price = quantity * 5;
-        String priceMessage = "Total: $" + (price);
-        priceMessage = priceMessage + "\nThank you!";
-        displayMessage(priceMessage);
-        //displayPrice(quantity * 5);
+        displayMessage(createOrderSummary());
+
     }
 
+    /**
+     * This method creates a summary of the order
+     * @return Order summary
+     */
+    public String createOrderSummary(){
+        return "Name: Tal" + "\nQuantity: " + quantity + "\nTotal: $" + calculatePrice() + "\nThank you!";
+    }
     /**
      *This method increments the quantity when the plus button is clicked
      */
@@ -55,15 +59,21 @@ int quantity = 0;
                 R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
+
     /**
-     * This method displays the given price on the screen.
+     * This method displays the price on the screen
+     * @param message displays price on the screen
      */
-    //private void displayPrice(int number) {
-    //   TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-    //    priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    //}
     private void displayMessage(String message) {
         TextView priceTextView = (TextView)findViewById(R.id.price_text_view);
         priceTextView.setText(message);
+    }
+    /**
+     * Calculates the price of the order based on the current quantity.
+     *
+     * @return  is the amount of coffees ordered
+     */
+    private int calculatePrice(){
+        return (quantity * 5);
     }
 }
