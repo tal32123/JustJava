@@ -76,23 +76,19 @@ String whippedCream = new String("");
         return (quantity * 5);
     }
 
-    /**
-     * is checkbox clicked
-     */
+
     public void toppings(View view){
         //is the view now checked
-        boolean checked = ((CheckBox)view).isChecked();
+        CheckBox topping = (CheckBox)findViewById(R.id.whipped_cream);
+        boolean checked = topping.isChecked();
         //check which checkbox was clicked
-        switch(view.getId()){
-            case R.id.whipped_cream:
-                if(checked){
-                whippedCream = "\nAdd whipped cream";
+                if (checked){
+                    whippedCream = "\nAdd whipped cream";
                 }
-                    //add to order summary
-                else
-                //do nothing
-                whippedCream = "";
-                break;
+                //add to order summary
+                else{
+                    //do nothing
+                    whippedCream = "";
         }
     }
 }
