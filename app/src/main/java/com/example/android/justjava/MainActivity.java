@@ -32,7 +32,7 @@ String whippedCream = new String("");
      * @return Order summary
      */
     public String createOrderSummary(){
-        return "Name: Tal" + "\nQuantity: " + quantity + "\nTotal: $" + calculatePrice() + whippedCream + choco + "\nThank you!";
+        return "Name: " + getName() + "\nQuantity: " + quantity + "\nTotal: $" + calculatePrice() + whippedCream + choco + "\nThank you!";
     }
     /**
      *This method increments the quantity when the plus button is clicked
@@ -101,5 +101,10 @@ String whippedCream = new String("");
         else {
             choco = "";
         }
+    }
+    public String getName(){
+        TextView nameField = (TextView)findViewById(R.id.name_box);
+         String name =  new String (nameField.getText().toString());
+        return name;
     }
 }
