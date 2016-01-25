@@ -41,7 +41,6 @@ String whippedCream = new String("");
                 startActivity(intent);
             }
 
-        displayMessage(createOrderSummary());
 
     }
 
@@ -91,14 +90,8 @@ String whippedCream = new String("");
         quantityTextView.setText("" + number);
     }
 
-    /**
-     * This method displays the price on the screen
-     * @param message displays price on the screen
-     */
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView)findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
-    }
+
+
     /**
      * Calculates the price of the order based on the current quantity.
      *
