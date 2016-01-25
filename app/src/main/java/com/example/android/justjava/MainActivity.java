@@ -44,7 +44,13 @@ String whippedCream = new String("");
      *This method increments the quantity when the plus button is clicked
      */
     public void increment(View view) {
-        quantity = quantity + 1;
+        if (quantity<100){
+            quantity = quantity + 1;
+        }
+        else{
+            quantity = 100;
+        }
+
         display(quantity);
     }
 
