@@ -12,7 +12,14 @@ import android.widget.TextView;
 public class MainActivity extends ActionBarActivity {
 int quantity = 0;
 String whippedCream = new String("");
+    int baseCost = 5;
     String choco = new String("");
+
+    /**
+     * These booleans check if toppings are inside
+     */
+    boolean addChoc = false;
+    boolean addWhip = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,7 +81,7 @@ String whippedCream = new String("");
      * @return  is the amount of coffees ordered
      */
     private int calculatePrice(){
-        return (quantity * 5);
+        return (quantity * getBaseCost());
     }
 
 
@@ -85,11 +92,13 @@ String whippedCream = new String("");
         //check which checkbox was clicked
                 if (checked){
                     whippedCream = "\nAdd whipped cream";
+                    addWhip = true;
                 }
                 //add to order summary
                 else{
                     //do nothing
                     whippedCream = "";
+                    addWhip = false;
         }
     }
     public void chocolate(View view){
@@ -97,14 +106,30 @@ String whippedCream = new String("");
         boolean chocoYes = chocolate.isChecked();
         if (chocoYes){
             choco = "\nAdd Chocolate";
+            addChoc = true;
         }
         else {
             choco = "";
+            addChoc = false;
         }
     }
     public String getName(){
         TextView nameField = (TextView)findViewById(R.id.name_box);
          String name =  new String (nameField.getText().toString());
         return name;
+    }
+    public int getBaseCost(){
+        if (addChoc && addWhip){
+            return 8;
+        }
+        else if (addChoc){
+            return 7;
+        }
+        else if (addWhip){
+            return 6;
+        }
+        else {
+            return 5;
+        }
     }
 }
