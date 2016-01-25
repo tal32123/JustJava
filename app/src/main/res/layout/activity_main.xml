@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper"
+    android:background="@drawable/wallpaper1"
     android:scaleType="centerCrop"
     android:orientation="vertical"
     tools:context="com.example.android.justjava.MainActivity">
@@ -13,24 +13,28 @@
     android:text="Toppings"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
-    android:textAllCaps="true"/>
+    android:textAllCaps="true"
+    android:textColor="@android:color/black"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="whippedCream"
+            android:onClick="toppings"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:text="Whipped Cream"
             android:paddingLeft="24dp"
-            android:textSize="16sp"/>
+            android:id="@+id/whipped_cream"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom ="8dp"
         android:text="Quantity"
-        android:textAllCaps="true"/>
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,6 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Summary:"
+        android:textColor="@android:color/black"
         android:textAllCaps="true"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"/>
