@@ -10,9 +10,8 @@ import android.widget.TextView;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends ActionBarActivity {
-int quantity = 0;
+int quantity = 1;
 String whippedCream = new String("");
-    int baseCost = 5;
     String choco = new String("");
 
     /**
@@ -53,7 +52,11 @@ String whippedCream = new String("");
      *This method decrements the quantity when the minus button is clicked
      */
     public void decrement(View view) {
-        quantity = quantity - 1;
+        if (quantity > 1){
+        quantity = quantity - 1;}
+        else{
+            quantity = 1;
+        }
         display(quantity);
     }
 
