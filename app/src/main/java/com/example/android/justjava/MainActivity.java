@@ -1,5 +1,7 @@
 package com.example.android.justjava;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -27,9 +29,18 @@ String whippedCream = new String("");
     }
 
     /**
-     * Displays order summary when the order button is clicked.
+     * Displays and emails order summary when the order button is clicked.
      */
     public void submitOrder(View view) {
+
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java order for " + getName());
+            intent.putExtra(Intent.EXTRA_TEXT, createOrderSummary());
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }
+
         displayMessage(createOrderSummary());
 
     }
@@ -40,6 +51,7 @@ String whippedCream = new String("");
      */
     public String createOrderSummary(){
         return "Name: " + getName() + "\nQuantity: " + quantity + "\nTotal: $" + calculatePrice() + whippedCream + choco + "\nThank you!";
+
     }
     /**
      *This method increments the quantity when the plus button is clicked
