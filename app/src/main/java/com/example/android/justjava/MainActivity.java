@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * This app displays an order form to order coffee.
@@ -49,6 +50,7 @@ String whippedCream = new String("");
         }
         else{
             quantity = 100;
+            Toast.makeText(this, "100 Coffees is the maximum per order", Toast.LENGTH_SHORT).show();
         }
 
         display(quantity);
@@ -62,6 +64,7 @@ String whippedCream = new String("");
         quantity = quantity - 1;}
         else{
             quantity = 1;
+            Toast.makeText(this, "You can not order less than one cup of coffee", Toast.LENGTH_SHORT).show();
         }
         display(quantity);
     }
