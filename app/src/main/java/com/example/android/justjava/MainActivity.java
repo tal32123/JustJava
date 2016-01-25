@@ -12,6 +12,7 @@ import android.widget.TextView;
 public class MainActivity extends ActionBarActivity {
 int quantity = 0;
 String whippedCream = new String("");
+    String choco = new String("");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,7 @@ String whippedCream = new String("");
      * @return Order summary
      */
     public String createOrderSummary(){
-        return "Name: Tal" + "\nQuantity: " + quantity + "\nTotal: $" + calculatePrice() + whippedCream + "\nThank you!";
+        return "Name: Tal" + "\nQuantity: " + quantity + "\nTotal: $" + calculatePrice() + whippedCream + choco + "\nThank you!";
     }
     /**
      *This method increments the quantity when the plus button is clicked
@@ -89,6 +90,16 @@ String whippedCream = new String("");
                 else{
                     //do nothing
                     whippedCream = "";
+        }
+    }
+    public void chocolate(View view){
+        CheckBox chocolate = (CheckBox)findViewById(R.id.chocolate_check_box);
+        boolean chocoYes = chocolate.isChecked();
+        if (chocoYes){
+            choco = "\nAdd Chocolate";
+        }
+        else {
+            choco = "";
         }
     }
 }

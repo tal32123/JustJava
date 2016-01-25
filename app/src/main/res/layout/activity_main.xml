@@ -39,7 +39,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:textColor="@android:color/black"
-            android:id="@+id/chocolate_text_box"/>
+            android:id="@+id/chocolate_check_box"
+            android:onClick="chocolate"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
