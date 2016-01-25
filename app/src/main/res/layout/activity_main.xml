@@ -13,13 +13,13 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Click here to enter your name."
+        android:hint="@string/name"
         android:inputType="text"
         android:id="@+id/name_box"/>
     <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Toppings"
+    android:text="@string/toppings"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
     android:textAllCaps="true"
@@ -31,7 +31,7 @@
             android:onClick="toppings"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Whipped Cream"
+            android:text="@string/whipped_cream"
             android:paddingLeft="24dp"
             android:id="@+id/whipped_cream"
             android:textSize="16sp"
@@ -39,7 +39,7 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chocolate"
+            android:text="@string/chocolate"
             android:paddingLeft="24dp"
             android:textSize="16sp"
             android:layout_marginTop="8dp"
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom ="8dp"
-        android:text="Quantity"
+        android:text="@string/quantity"
         android:textAllCaps="true"
         android:textColor="@android:color/black"/>
     <LinearLayout
@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Order"
+        android:text="@string/order"
         android:onClick="submitOrder"/>
     </LinearLayout>
 </ScrollView>
