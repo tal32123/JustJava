@@ -11,47 +11,32 @@
     android:orientation="vertical"
     tools:context="com.example.android.justjava.MainActivity">
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/CustomText"
         android:hint="@string/name"
         android:inputType="text"
         android:id="@+id/name_box"/>
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+        style="@style/CustomText"
     android:text="@string/toppings"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
     android:textAllCaps="true"
     android:textColor="@android:color/black"/>
 
         <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/CustomText"
             android:onClick="toppings"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             android:text="@string/whipped_cream"
             android:paddingLeft="24dp"
             android:id="@+id/whipped_cream"
-            android:textSize="16sp"
             android:textColor="@android:color/black" />
         <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/CustomText"
             android:text="@string/chocolate"
             android:paddingLeft="24dp"
-            android:textSize="16sp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             android:textColor="@android:color/black"
             android:id="@+id/chocolate_check_box"
             android:onClick="chocolate"/>
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom ="8dp"
+        style="@style/CustomText"
         android:text="@string/quantity"
         android:textAllCaps="true"
         android:textColor="@android:color/black"/>
@@ -60,36 +45,23 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            style="@style/CustomButton"
             android:text="-"
-            android:textSize="16sp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             android:onClick="decrement"/>
         <TextView
+            style="@style/CustomText"
             android:id="@+id/quantity_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="1"
-            android:textSize="16sp"
             android:textColor="@android:color/black"
             android:layout_margin="8dp"
             android:onClick="decrement"/>
         <Button
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            style="@style/CustomButton"
             android:text="+"
-            android:textSize="16sp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             android:onClick="increment"/>
     </LinearLayout>
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        style="@style/CustomText"
         android:text="@string/order"
         android:onClick="submitOrder"/>
     </LinearLayout>

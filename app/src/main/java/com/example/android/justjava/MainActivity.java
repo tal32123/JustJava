@@ -9,6 +9,8 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
+
 /**
  * This app displays an order form to order coffee.
  */
@@ -48,9 +50,13 @@ String whippedCream = new String("");
      * This method creates a summary of the order
      * @return Order summary
      */
-    public String createOrderSummary(){
-        return "Name: " + getName() + "\nQuantity: " + quantity + "\nTotal: $" + calculatePrice() + whippedCream + choco + "\nThank you!";
+//    public String createOrderSummary(){
+//        return "Name: " + getName() + "\nQuantity: " + quantity + "\nTotal: $" + calculatePrice() + whippedCream + choco + "\nThank you!";
+//
+//    }
 
+    public String createOrderSummary(){
+        return "Name: " + getName() + "\nQuantity: " + quantity + "\nTotal: " + NumberFormat.getCurrencyInstance().format(calculatePrice()) + whippedCream + choco + "\nThank you!";
     }
     /**
      *This method increments the quantity when the plus button is clicked
